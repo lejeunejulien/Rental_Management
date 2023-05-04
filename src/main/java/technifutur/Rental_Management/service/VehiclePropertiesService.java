@@ -6,19 +6,20 @@ import technifutur.Rental_Management.model.form.BookingCreateForm;
 
 import java.util.List;
 
-public class VehiclePropertiesService {
-    public static ResponseEntity<BookingDTO> createVehicleProperties(BookingCreateForm form) {
+public interface VehiclePropertiesService {
+
+    static ResponseEntity<BookingDTO> createVehicleProperties(BookingCreateForm form) {
     }
 
-    public static List<BookingDTO> getAll() {
+    static List<BookingDTO> getAll() {
     }
 
-    public static void getOne(long id) {
+    static void getOne(long id) {
     }
 
-    public static void update(long id) {
+    static void update(long id) {
     }
 
-    public static void delete(long id) {
+    static void delete(long id) {
     }
 }
