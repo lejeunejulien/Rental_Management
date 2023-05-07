@@ -17,12 +17,13 @@ public class AuthController {
     private final AuthService authService;
 
     public AuthController(AuthService authService){
+
         this.authService= authService;
     }
 
     //Register
     @PostMapping("/register")
-    public void register(@RequestBody @Valid RegistrationForm form){   //ne renvoie rien juste enregistrement
+    public void register(@RequestBody @Valid RegistrationForm form){
 
         authService.register(form);
     }

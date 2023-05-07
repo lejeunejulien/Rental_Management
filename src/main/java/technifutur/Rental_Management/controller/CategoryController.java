@@ -25,8 +25,8 @@ public class CategoryController {
 
     // Create (Client et Admin)
     @PostMapping("/add")
-    public ResponseEntity<BookingDTO> creation_category(@RequestBody @Valid CategoryCreateForm form){
-        return categoryService.createCategory(form);
+    public void create(@RequestBody @Valid CategoryCreateForm form){
+        categoryService.create(form);
     }
 
     // Read (Admin)
@@ -37,15 +37,15 @@ public class CategoryController {
     }
 
     // Read (User)
-    @GetMapping("{id:[0-9]+/getone}")
-    public void getOne(@PathVariable long id){
+    @GetMapping("/{id:[0-9]+}/getone")
+    public CategoryDTO getOne(@PathVariable long id){
 
-        categoryService.getOne(id);
+        return categoryService.getOne(id);
     }
 
 
     // Admin
-    @PatchMapping("{id:[0-9]+/update}")
+    @PatchMapping("/{id:[0-9]+}/update")
     public void update(@PathVariable long id){
 
         categoryService.update(id);
@@ -53,7 +53,7 @@ public class CategoryController {
 
 
     // Admin
-    @DeleteMapping("{id:[0-9]+/delete}")
+    @DeleteMapping("/{id:[0-9]+}/delete")
     public void delete(@PathVariable long id){
 
         categoryService.delete(id);

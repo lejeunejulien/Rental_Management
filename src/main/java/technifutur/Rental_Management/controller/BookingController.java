@@ -2,6 +2,7 @@ package technifutur.Rental_Management.controller;
 
 
 import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import technifutur.Rental_Management.model.dto.BookingDTO;
@@ -17,38 +18,45 @@ public class BookingController {
     private final BookingService bookingService;
 
     public BookingController(BookingService bookingService){
+
         this.bookingService=bookingService;
     }
 
     // Create (Client et Admin)
+    //@ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/add")
-    public ResponseEntity<BookingDTO> creation_reservation(@RequestBody @Valid BookingCreateForm form){
-        return bookingService.createBooking(form);
+    public ResponseEntity<BookingDTO> create(@RequestBody @Valid BookingCreateForm form){
+
+        return bookingService.create(form);
     }
 
     // Read (Admin)
     @GetMapping("/getall")
     public List<BookingDTO> getAll(){
+
         return bookingService.getAll();
     }
 
     // Read (User)
-    @GetMapping("{id:[0-9]+/getone}")
-    public void getOne(@PathVariable long id){
-        bookingService.getOne(id);
+    @GetMapping("/{id:[0-9]+}/getone")
+    public BookingDTO getOne(@PathVariable long id){
+
+        return bookingService.getOne(id);
     }
 
 
     // Update si user-> check que l'id correspond à son propre id
-    @PatchMapping("{id:[0-9]+/update}")
+    @PatchMapping("/{id:[0-9]+}/update")
     public void update(@PathVariable long id){
+
         bookingService.update(id);
     }
 
 
     // Delete si user-> check que l'id correspond à son propre id
-    @DeleteMapping("{id:[0-9]+/delete}")
+    @DeleteMapping("/{id:[0-9]+}/delete")
     public void delete(@PathVariable long id){
+
         bookingService.delete(id);
     }
 }

@@ -9,7 +9,7 @@ import java.util.List;
 
 @Service
 public interface SupplierService {
-    ResponseEntity<SupplierDTO> createSupplier(SupplierCreateForm form);
+    void create(SupplierCreateForm form);
 
     List<SupplierDTO> getAll();
 

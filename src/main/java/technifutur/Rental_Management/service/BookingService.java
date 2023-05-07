@@ -10,13 +10,16 @@ import java.util.List;
 
 @Service
 public interface BookingService {
-    ResponseEntity<BookingDTO> createBooking(BookingCreateForm form);
+
+    ResponseEntity<BookingDTO> create(BookingCreateForm form);
 
     List<BookingDTO> getAll();
 
+    BookingDTO getOne(long id);
+
     void delete(long id);
 
-    void getOne(long id);
-
     void update(long id);
+
+
 }
