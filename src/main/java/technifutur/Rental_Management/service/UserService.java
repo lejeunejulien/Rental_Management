@@ -2,14 +2,14 @@ package technifutur.Rental_Management.service;
 
 import org.springframework.stereotype.Service;
 import technifutur.Rental_Management.model.dto.UserDTO;
-import technifutur.Rental_Management.model.form.UserCreateForm;
+import technifutur.Rental_Management.model.form.RegistrationForm;
 
 import java.util.List;
 
 @Service
 public interface UserService {
 
-    void create(UserCreateForm form);
+    void create(RegistrationForm form);
 
     List<UserDTO> getAll();
 

@@ -2,19 +2,20 @@ package technifutur.Rental_Management.service;
 
 import org.springframework.stereotype.Service;
 import technifutur.Rental_Management.model.dto.BookingDTO;
+import technifutur.Rental_Management.model.dto.Vehicle_propertiesDTO;
 import technifutur.Rental_Management.model.form.BookingCreateForm;
 import technifutur.Rental_Management.model.form.VehiclePropertiesCreateForm;
 
 import java.util.List;
 
-
+@Service
 public interface VehiclePropertiesService {
 
+    List<Vehicle_propertiesDTO> getAll();
+
     void create(VehiclePropertiesCreateForm form);
-    
-    List<BookingDTO> getAll();
-    
-    BookingDTO getOne(long id);
+
+    Vehicle_propertiesDTO getOne(long id);
 
     void update(long id);
 

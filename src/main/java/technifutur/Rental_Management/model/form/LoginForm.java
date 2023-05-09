@@ -3,7 +3,7 @@ package technifutur.Rental_Management.model.form;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
-@Data // pourquoi cela et pas dans registrationform
+@Data
 public class LoginForm {
 
     @NotNull

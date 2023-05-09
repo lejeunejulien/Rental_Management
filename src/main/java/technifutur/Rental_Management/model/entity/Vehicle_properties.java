@@ -10,6 +10,7 @@ import java.util.List;
 @Getter
 @Setter
 public class Vehicle_properties {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "vehicle_properties_id", nullable = false)

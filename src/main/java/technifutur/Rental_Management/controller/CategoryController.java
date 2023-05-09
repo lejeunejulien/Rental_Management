@@ -1,13 +1,9 @@
 package technifutur.Rental_Management.controller;
 
 import jakarta.validation.Valid;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import technifutur.Rental_Management.model.dto.BookingDTO;
 import technifutur.Rental_Management.model.dto.CategoryDTO;
-import technifutur.Rental_Management.model.form.BookingCreateForm;
 import technifutur.Rental_Management.model.form.CategoryCreateForm;
-import technifutur.Rental_Management.service.BookingService;
 import technifutur.Rental_Management.service.CategoryService;
 
 import java.util.List;

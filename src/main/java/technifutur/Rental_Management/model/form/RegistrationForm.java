@@ -1,15 +1,20 @@
 package technifutur.Rental_Management.model.form;
 
+import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import lombok.Data;
 
+
+@Data
 public class RegistrationForm {
 
-    @NotNull
+    private String last_name;
+
+    private String first_name;
+
     private String userName;
 
-    @NotNull
-    @Size(min =4)
     private String password;
 
 }

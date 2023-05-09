@@ -1,10 +1,9 @@
 package technifutur.Rental_Management.controller;
 
 import jakarta.validation.Valid;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import technifutur.Rental_Management.model.dto.UserDTO;
-import technifutur.Rental_Management.model.form.UserCreateForm;
+import technifutur.Rental_Management.model.form.RegistrationForm;
 import technifutur.Rental_Management.service.UserService;
 
 import java.util.List;
@@ -22,7 +21,7 @@ public class UserController {
 
     // Create (Client et Admin)
     @PostMapping("/add")
-    public void create(@RequestBody @Valid UserCreateForm form){
+    public void create(@RequestBody @Valid RegistrationForm form){
 
         userService.create(form);
     }

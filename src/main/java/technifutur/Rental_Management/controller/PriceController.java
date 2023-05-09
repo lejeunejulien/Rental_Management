@@ -2,13 +2,8 @@ package technifutur.Rental_Management.controller;
 
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
-import technifutur.Rental_Management.model.dto.CategoryDTO;
-import technifutur.Rental_Management.model.form.CategoryCreateForm;
 import technifutur.Rental_Management.model.form.PriceCreateForm;
-import technifutur.Rental_Management.service.CategoryService;
 import technifutur.Rental_Management.service.PriceService;
-
-import java.util.List;
 
 
 @RestController
