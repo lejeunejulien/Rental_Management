@@ -3,6 +3,7 @@ package technifutur.Rental_Management.service.impl;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
+import org.springframework.stereotype.Service;
 import org.yaml.snakeyaml.emitter.ScalarAnalysis;
 import technifutur.Rental_Management.mapper.Mapper_category;
 import technifutur.Rental_Management.model.dto.CategoryDTO;
@@ -14,6 +15,8 @@ import technifutur.Rental_Management.service.CategoryService;
 
 import java.util.List;
 
+
+@Service
 public class CategoryServiceImpl implements CategoryService {
 
     private final CategoryRepository categoryRepository;

@@ -4,6 +4,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 import technifutur.Rental_Management.mapper.Mapper_booking;
 import technifutur.Rental_Management.model.dto.BookingDTO;
 import technifutur.Rental_Management.model.entity.Booking;
@@ -18,6 +19,7 @@ import technifutur.Rental_Management.service.BookingService;
 
 import java.util.List;
 
+@Service
 public class BookingServiceImpl implements BookingService {
 
     private final UserRepository userRepository;

@@ -6,7 +6,6 @@ import technifutur.Rental_Management.model.form.RegistrationForm;
 
 import java.util.List;
 
-@Service
 public interface UserService {
 
     void create(RegistrationForm form);

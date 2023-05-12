@@ -1,9 +1,11 @@
 package technifutur.Rental_Management.mapper;
 
+import org.springframework.stereotype.Service;
 import technifutur.Rental_Management.model.dto.BookingDTO;
 import technifutur.Rental_Management.model.entity.Booking;
 import technifutur.Rental_Management.model.form.BookingCreateForm;
 
+@Service
 public class Mapper_booking {
 
     public BookingDTO toBookingDTO(Booking entity){

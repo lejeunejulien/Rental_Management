@@ -1,9 +1,12 @@
 package technifutur.Rental_Management.mapper;
 
+import org.springframework.stereotype.Service;
 import technifutur.Rental_Management.model.dto.PriceDTO;
 import technifutur.Rental_Management.model.entity.Price;
 import technifutur.Rental_Management.model.form.PriceCreateForm;
 
+
+@Service
 public class Mapper_price {
 
     public PriceDTO toPriceDTO(Price entity){

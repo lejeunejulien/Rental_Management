@@ -7,7 +7,7 @@ import technifutur.Rental_Management.model.dto.PriceDTO;
 import technifutur.Rental_Management.model.entity.Category;
 import technifutur.Rental_Management.model.form.CategoryCreateForm;
 
-@Data
+@Service
 public class Mapper_category {
 
     private Mapper_price mapper_price;

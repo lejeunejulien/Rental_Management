@@ -1,9 +1,12 @@
 package technifutur.Rental_Management.mapper;
 
+import org.springframework.stereotype.Service;
 import technifutur.Rental_Management.model.dto.SupplierDTO;
 import technifutur.Rental_Management.model.entity.Supplier;
 import technifutur.Rental_Management.model.form.SupplierCreateForm;
 
+
+@Service
 public class Mapper_supplier {
 
     public SupplierDTO toSupplierDTO(Supplier entity){

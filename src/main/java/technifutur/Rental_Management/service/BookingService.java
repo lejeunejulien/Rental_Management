@@ -9,7 +9,6 @@ import technifutur.Rental_Management.model.form.VehiclePropertiesCreateForm;
 import java.util.List;
 
 
-@Service
 public interface BookingService {
 
     BookingDTO create(BookingCreateForm form);

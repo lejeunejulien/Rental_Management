@@ -29,11 +29,11 @@ public class Vehicle_properties {
     private List<Booking> list_bookings;
 
     @ManyToOne
-    @JoinColumn(nullable = false)
+    //@JoinColumn(nullable = false)
     private Category category;
 
     @ManyToOne
-    @JoinColumn(nullable = false)
+    //@JoinColumn(nullable = false)
     private Supplier supplier;
 
     @OneToMany(mappedBy = "vehicle_properties")

@@ -6,7 +6,7 @@ import technifutur.Rental_Management.model.entity.Booking;
 import technifutur.Rental_Management.model.entity.Vehicle_properties;
 import technifutur.Rental_Management.model.form.VehiclePropertiesCreateForm;
 
-
+@Service
 public class Mapper_vehicle_properties {
 
     public Vehicle_propertiesDTO toVehiclePropertiesDTO(Vehicle_properties entity){

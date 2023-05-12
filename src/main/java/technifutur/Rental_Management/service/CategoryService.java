@@ -6,7 +6,6 @@ import technifutur.Rental_Management.model.form.CategoryCreateForm;
 
 import java.util.List;
 
-@Service
 public interface CategoryService {
     void create(CategoryCreateForm form);
 

@@ -10,7 +10,7 @@ import technifutur.Rental_Management.model.form.VehiclePropertiesCreateForm;
 
 import java.util.List;
 
-@Service
+
 public interface VehiclePropertiesService {
 
 

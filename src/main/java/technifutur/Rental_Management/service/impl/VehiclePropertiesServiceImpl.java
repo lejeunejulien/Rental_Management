@@ -4,6 +4,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 import technifutur.Rental_Management.exception.RessourceNotFoundException;
 import technifutur.Rental_Management.mapper.Mapper_vehicle_properties;
 import technifutur.Rental_Management.model.dto.Vehicle_propertiesDTO;
@@ -18,6 +19,8 @@ import technifutur.Rental_Management.service.VehiclePropertiesService;
 
 import java.util.List;
 
+
+@Service
 public class VehiclePropertiesServiceImpl implements VehiclePropertiesService {
 
     private final CategoryRepository categoryRepository;
