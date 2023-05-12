@@ -27,7 +27,7 @@ public class BookingController {
     @PostMapping("/add")
     public ResponseEntity<BookingDTO> create(@RequestBody @Valid BookingCreateForm form){
 
-        return bookingService.create(form);
+        return ResponseEntity.ok(bookingService.create(form));
     }
 
     // Read (Admin)
@@ -47,9 +47,9 @@ public class BookingController {
 
     // Update si user-> check que l'id correspond à son propre id
     @PatchMapping("/{id:[0-9]+}/update")
-    public void update(@PathVariable long id){
+    public BookingDTO update(@RequestBody @Valid BookingCreateForm form,@PathVariable long id){
 
-        bookingService.update(id);
+        return bookingService.update(form,id);
     }
 
 

@@ -42,9 +42,9 @@ public class CategoryController {
 
     // Admin
     @PatchMapping("/{id:[0-9]+}/update")
-    public void update(@PathVariable long id){
+    public CategoryDTO update(@RequestBody @Valid CategoryCreateForm form,@PathVariable long id){
 
-        categoryService.update(id);
+        return categoryService.update(form,id);
     }
 
 

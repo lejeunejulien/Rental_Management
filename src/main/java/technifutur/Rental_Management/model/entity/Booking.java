@@ -16,7 +16,7 @@ public class Booking {
         @Column(name = "booking_id", nullable = false)
         private Long id;
 
-        @Column(nullable = false)
+        @Column
         private Boolean validation;
 
         @Column(nullable = false)

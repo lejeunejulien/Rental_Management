@@ -14,3 +14,8 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: create
+
+      # configuration du chemin de base pour swagger
+springdoc:
+  swagger-ui:
+    path: /swagger

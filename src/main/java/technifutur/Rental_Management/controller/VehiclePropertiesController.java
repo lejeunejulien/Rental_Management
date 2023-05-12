@@ -1,9 +1,11 @@
 package technifutur.Rental_Management.controller;
 
 import jakarta.validation.Valid;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import technifutur.Rental_Management.model.dto.BookingDTO;
 import technifutur.Rental_Management.model.dto.Vehicle_propertiesDTO;
+import technifutur.Rental_Management.model.entity.Vehicle_properties;
 import technifutur.Rental_Management.model.form.VehiclePropertiesCreateForm;
 import technifutur.Rental_Management.service.VehiclePropertiesService;
 
@@ -21,9 +23,9 @@ public class VehiclePropertiesController {
 
     // Create (Admin)
     @PostMapping("/add")
-    public void create(@RequestBody @Valid VehiclePropertiesCreateForm form){
+    public ResponseEntity<Vehicle_propertiesDTO> create(@RequestBody @Valid VehiclePropertiesCreateForm form){
 
-        vehiclePropertiesService.create(form);
+        return ResponseEntity.ok(vehiclePropertiesService.create(form));
     }
 
     // Read (Admin et User)
@@ -40,11 +42,13 @@ public class VehiclePropertiesController {
         return vehiclePropertiesService.getOne(id);
     }
 
+    //@RequestBody Book bookToUpdate, @PathVariable("id") int id
+
     // Admin
     @PatchMapping("/{id:[0-9]+}/update")
-    public void update(@PathVariable long id){
+    public void update(@RequestBody @Valid VehiclePropertiesCreateForm form, @PathVariable Long id){
 
-        vehiclePropertiesService.update(id);
+        vehiclePropertiesService.update(form,id);
     }
 
     // Admin

@@ -4,6 +4,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import technifutur.Rental_Management.model.dto.BookingDTO;
 import technifutur.Rental_Management.model.form.BookingCreateForm;
+import technifutur.Rental_Management.model.form.VehiclePropertiesCreateForm;
 
 import java.util.List;
 
@@ -11,7 +12,7 @@ import java.util.List;
 @Service
 public interface BookingService {
 
-    ResponseEntity<BookingDTO> create(BookingCreateForm form);
+    BookingDTO create(BookingCreateForm form);
 
     List<BookingDTO> getAll();
 
@@ -19,7 +20,7 @@ public interface BookingService {
 
     void delete(long id);
 
-    void update(long id);
+    BookingDTO update(BookingCreateForm form,long id);
 
 
 }

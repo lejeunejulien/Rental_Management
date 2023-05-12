@@ -14,7 +14,7 @@ public interface CategoryService {
 
     CategoryDTO getOne(long id);
 
-    void update(long id);
+    CategoryDTO update(CategoryCreateForm form,long id);
 
     void delete(long id);
 
