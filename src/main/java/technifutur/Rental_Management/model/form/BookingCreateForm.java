@@ -4,7 +4,9 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 
 @Data
@@ -14,9 +16,13 @@ public class BookingCreateForm {
 
     private String adress;
 
-    private LocalDateTime start_date;
+    private LocalDate start_date;
 
-    private LocalDateTime arrival_date;
+    private LocalTime start_time;
+
+    private LocalDate arrival_date;
+
+    private LocalTime arrival_time;
 
     private long id_registered_user; //configuration de la sécurité au préalable
 

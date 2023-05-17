@@ -4,7 +4,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Entity
 @Getter
@@ -22,11 +24,22 @@ public class Booking {
         @Column(nullable = false)
         private String adress;
 
+        /////////////
         @Column(nullable = false)
-        private LocalDateTime start_date;
+        private LocalDate start_date;
 
         @Column(nullable = false)
-        private LocalDateTime arrival_date;
+        private LocalTime start_time;
+
+        ////////////
+
+        @Column(nullable = false)
+        private LocalDate arrival_date;
+
+        @Column(nullable = false)
+        private LocalTime arrival_time;
+
+        ///////////
 
         @ManyToOne
         @JoinColumn(nullable = false)

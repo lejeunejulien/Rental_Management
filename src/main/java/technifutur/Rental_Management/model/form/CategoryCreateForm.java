@@ -11,13 +11,10 @@ import java.util.List;
 @Data
 public class CategoryCreateForm {
 
-    @NotNull
     private String brand;
 
-    @NotNull
     private String model;
 
-    @NotNull
     private long id_price;
 
 }
