@@ -21,10 +21,8 @@ public class VehiclePropertiesCreateForm {
 
     //private List<Booking> list_bookings; -> si on veut ajouter une réservation on utilisera "booking"
 
-    @NotNull
     private long id_category; // Il y aura eu un getAll de category avant et une sélection de la category (id via frontend)
 
-    @NotNull
     private long id_supplier; // Idem supplier
 
     private List<Vehicle_statusForm> list_status_vehicle;  // Liste fournie avant via une requête

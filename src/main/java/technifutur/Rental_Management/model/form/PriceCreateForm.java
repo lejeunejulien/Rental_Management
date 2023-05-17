@@ -21,6 +21,4 @@ public class PriceCreateForm {
 
     private Double caution;
 
-    private LocalDateTime arrival_date;
-
 }

@@ -27,9 +27,7 @@ public class Price {
     @Column(nullable = false)
     private Double caution;
 
-    @Column(nullable = false)
-    private LocalDateTime arrival_date;
-
     @OneToMany(mappedBy = "price")
+    @JoinColumn(nullable = false)
     private List<Category> list_category;
 }

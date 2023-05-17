@@ -29,8 +29,10 @@ public class Booking {
         private LocalDateTime arrival_date;
 
         @ManyToOne
+        @JoinColumn(nullable = false)
         private Registered_user registered_user;
 
         @ManyToOne
+        @JoinColumn(nullable = false)
         private Vehicle_properties vehicle_properties;
 }

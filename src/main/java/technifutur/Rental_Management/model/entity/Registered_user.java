@@ -29,6 +29,7 @@ public class Registered_user {
     private String password;
 
     @OneToMany(mappedBy = "registered_user")
+    @JoinColumn(nullable = false)
     private List<Booking> list_bookings;
 
 }

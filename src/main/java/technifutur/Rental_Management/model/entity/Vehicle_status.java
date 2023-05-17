@@ -26,6 +26,7 @@ public class Vehicle_status {
     private LocalDateTime end_date;
 
     @ManyToOne
+    @JoinColumn(nullable = false)
     private Vehicle_properties vehicle_properties;
 
 }
