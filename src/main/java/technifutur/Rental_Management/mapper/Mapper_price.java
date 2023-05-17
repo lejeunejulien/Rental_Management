@@ -15,7 +15,6 @@ public class Mapper_price {
         dto.setPrice_weekend(entity.getPrice_weekend());
         dto.setCaution(entity.getCaution());
         dto.setPrice_day(entity.getPrice_day());
-        dto.setArrival_date(entity.getArrival_date());
 
         return dto;
     }
@@ -26,7 +25,6 @@ public class Mapper_price {
         entity.setPrice_weekend(form.getPrice_weekend());
         entity.setCaution(form.getCaution());
         entity.setPrice_day(form.getPrice_day());
-        entity.setArrival_date(form.getArrival_date());
 
         return entity;
     }

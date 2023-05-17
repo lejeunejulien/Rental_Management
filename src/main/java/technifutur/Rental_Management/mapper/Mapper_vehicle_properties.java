@@ -15,7 +15,7 @@ public class Mapper_vehicle_properties {
         dto.setYear(entity.getYear());
         dto.setEngine_power(entity.getEngine_power());
 
-        return null;
+        return dto;
     }
 
     public Vehicle_properties toVehiclePropertiesEntity(VehiclePropertiesCreateForm form){

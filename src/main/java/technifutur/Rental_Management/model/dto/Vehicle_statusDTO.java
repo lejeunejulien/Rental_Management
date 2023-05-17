@@ -9,6 +9,6 @@ import java.time.LocalDateTime;
 public class Vehicle_statusDTO {
 
     private String status;
-    private String start_date;
+    private LocalDateTime start_date;
     private LocalDateTime end_date;
 }
