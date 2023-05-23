@@ -28,6 +28,5 @@ public class Price {
     private Double caution;
 
     @OneToMany(mappedBy = "price")
-    @JoinColumn(nullable = false)
     private List<Category> list_category;
 }

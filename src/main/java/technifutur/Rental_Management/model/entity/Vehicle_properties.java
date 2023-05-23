@@ -37,6 +37,5 @@ public class Vehicle_properties {
     private Supplier supplier;
 
     @OneToMany(mappedBy = "vehicle_properties")
-    @JoinColumn(nullable = false)
     private List<Vehicle_status> list_status_vehicle;
 }

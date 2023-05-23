@@ -22,7 +22,6 @@ public class Category {
     private String model;
 
     @OneToMany(mappedBy = "category")
-    @JoinColumn(nullable = false)
     private List<Vehicle_properties> list_vehicle_properties;
 
     @ManyToOne

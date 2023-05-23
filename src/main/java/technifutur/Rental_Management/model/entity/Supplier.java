@@ -28,7 +28,6 @@ public class Supplier {
     private Double purchase_price;
 
     @OneToMany(mappedBy = "supplier")
-    @JoinColumn(nullable = false)
     private List<Vehicle_properties> list_vehicle_properties;
 
 }
