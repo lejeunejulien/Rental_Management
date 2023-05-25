@@ -7,7 +7,7 @@ import java.util.List;
 
 @Data
 public class SupplierDTO {
-
+    private long id;
     private String name;
     private String adress;
     private String tel;

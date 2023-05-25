@@ -15,10 +15,10 @@ public class Category {
     @Column(name = "category_id", nullable = false)
     private Long id;
 
-    @Column(nullable = false)
+    @Column
     private String brand;
 
-    @Column(nullable = false)
+    @Column
     private String model;
 
     @OneToMany(mappedBy = "category")

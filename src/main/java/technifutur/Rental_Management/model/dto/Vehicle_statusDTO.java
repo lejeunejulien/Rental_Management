@@ -9,10 +9,9 @@ import java.time.LocalTime;
 
 @Data
 public class Vehicle_statusDTO {
-
+    private Long id;
     private String status;
-    private LocalDate start_date;
-    private LocalTime start_time;
-    private LocalDate end_date;
-    private LocalTime end_time;
+    private LocalDateTime start_date;
+    private LocalDateTime end_date;
+
 }

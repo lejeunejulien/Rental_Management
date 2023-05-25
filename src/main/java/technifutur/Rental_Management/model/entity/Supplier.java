@@ -15,16 +15,16 @@ public class Supplier {
     @Column(name = "supplier_id", nullable = false)
     private Long id;
 
-    @Column(nullable = false)
+    @Column
     private String name;
 
-    @Column(nullable = false)
+    @Column
     private String adress;
 
-    @Column(nullable = false)
+    @Column
     private String tel;
 
-    @Column(nullable = false)
+    @Column
     private Double purchase_price;
 
     @OneToMany(mappedBy = "supplier")

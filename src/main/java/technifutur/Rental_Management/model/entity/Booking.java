@@ -18,34 +18,29 @@ public class Booking {
         @Column(name = "booking_id", nullable = false)
         private Long id;
 
+        //Validation à utiliser
         @Column
         private Boolean validation;
 
-        @Column(nullable = false)
+        @Column
         private String adress;
 
         /////////////
-        @Column(nullable = false)
-        private LocalDate start_date;
-
-        @Column(nullable = false)
-        private LocalTime start_time;
+        @Column
+        private LocalDateTime start_date;
 
         ////////////
 
-        @Column(nullable = false)
-        private LocalDate arrival_date;
-
-        @Column(nullable = false)
-        private LocalTime arrival_time;
+        @Column
+        private LocalDateTime arrival_date;
 
         ///////////
 
         @ManyToOne
-        @JoinColumn(nullable = false)
+        //@JoinColumn(nullable = false)
         private Registered_user registered_user;
 
         @ManyToOne
-        @JoinColumn(nullable = false)
+        //@JoinColumn(nullable = false)
         private Vehicle_properties vehicle_properties;
 }

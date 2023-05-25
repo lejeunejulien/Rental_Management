@@ -16,13 +16,9 @@ public class BookingCreateForm {
 
     private String adress;
 
-    private LocalDate start_date;
+    private LocalDateTime start_date;
 
-    private LocalTime start_time;
-
-    private LocalDate arrival_date;
-
-    private LocalTime arrival_time;
+    private LocalDateTime arrival_date;
 
     private long id_registered_user; //configuration de la sécurité au préalable
 

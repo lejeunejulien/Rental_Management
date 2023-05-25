@@ -21,9 +21,9 @@ public class SupplierController {
 
     // Admin
     @PostMapping("/add")
-    public void create(@RequestBody @Valid SupplierCreateForm form){
+    public SupplierDTO create(@RequestBody @Valid SupplierCreateForm form){
 
-        supplierService.create(form);
+        return supplierService.create(form);
     }
 
     // Read (Admin)
@@ -36,9 +36,9 @@ public class SupplierController {
 
     // Admin
     @PatchMapping("/{id:[0-9]+}/update")
-    public void update(@PathVariable long id){
+    public SupplierDTO update(@RequestBody @Valid SupplierCreateForm form, @PathVariable long id){
 
-        supplierService.update(id);
+        return supplierService.update(form,id);
     }
 
 

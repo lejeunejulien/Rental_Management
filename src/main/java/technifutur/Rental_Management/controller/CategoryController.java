@@ -21,8 +21,9 @@ public class CategoryController {
 
     // Create (Client et Admin)
     @PostMapping("/add")
-    public void create(@RequestBody @Valid CategoryCreateForm form){
-        categoryService.create(form);
+    public CategoryDTO create(@RequestBody @Valid CategoryCreateForm form){
+
+        return categoryService.create(form);
     }
 
     // Read (Admin)

@@ -20,7 +20,7 @@ public interface VehiclePropertiesService {
 
     Vehicle_propertiesDTO getOne(long id);
 
-    void update(VehiclePropertiesCreateForm form, long id);
+    Vehicle_propertiesDTO update(VehiclePropertiesCreateForm form, long id);
 
     void delete(long id);
 }

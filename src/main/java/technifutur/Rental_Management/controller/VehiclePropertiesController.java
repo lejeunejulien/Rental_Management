@@ -46,9 +46,9 @@ public class VehiclePropertiesController {
 
     // Admin
     @PatchMapping("/{id:[0-9]+}/update")
-    public void update(@RequestBody @Valid VehiclePropertiesCreateForm form, @PathVariable Long id){
+    public Vehicle_propertiesDTO update(@RequestBody @Valid VehiclePropertiesCreateForm form, @PathVariable Long id){
 
-        vehiclePropertiesService.update(form,id);
+        return vehiclePropertiesService.update(form,id);
     }
 
     // Admin

@@ -11,6 +11,7 @@ public class Mapper_supplier {
 
     public SupplierDTO toSupplierDTO(Supplier entity){
         SupplierDTO dto = new SupplierDTO();
+        dto.setId(entity.getId());
         dto.setAdress(entity.getAdress());
         dto.setName(entity.getName());
         dto.setTel(entity.getTel());

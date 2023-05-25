@@ -12,11 +12,9 @@ public class Vehicle_statusForm {
 
     private String status; // (Panne, Service, Entretien)
 
-    private LocalDate start_date;
+    private LocalDateTime start_date;
 
-    private LocalTime start_time;
+    private LocalDateTime end_date;
 
-    private LocalDate end_date;
 
-    private LocalTime end_time;
 }

@@ -18,26 +18,21 @@ public class Vehicle_status {
     @Column(name = "vehicle_satus_id", nullable = false)
     private Long id;
 
-    @Column(nullable = false)
+    @Column
     private String status;
 
     ///////////
-    @Column(nullable = false)
-    private LocalDate start_date;
-
-    @Column(nullable = false)
-    private LocalTime start_time;
+    @Column
+    private LocalDateTime start_date;
 
     ///////////
-    @Column(nullable = false)
-    private LocalDate end_date;
+    @Column
+    private LocalDateTime end_date;
 
-    @Column(nullable = false)
-    private LocalTime end_time;
     //////////
 
     @ManyToOne
-    @JoinColumn(nullable = false)
+    //@JoinColumn(nullable = false)
     private Vehicle_properties vehicle_properties;
 
 }

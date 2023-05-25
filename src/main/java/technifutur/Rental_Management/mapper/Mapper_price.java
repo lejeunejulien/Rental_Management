@@ -11,6 +11,7 @@ public class Mapper_price {
 
     public PriceDTO toPriceDTO(Price entity){
         PriceDTO dto = new PriceDTO();
+        dto.setId(entity.getId());
         dto.setPrice_month(entity.getPrice_month());
         dto.setPrice_weekend(entity.getPrice_weekend());
         dto.setCaution(entity.getCaution());

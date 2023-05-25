@@ -113,11 +113,9 @@ public class VehiclePropertiesServiceImpl implements VehiclePropertiesService {
 
     }
 
-
-
     @Transactional
     @Override
-    public void update(VehiclePropertiesCreateForm form, long id) {
+    public Vehicle_propertiesDTO update(VehiclePropertiesCreateForm form, long id) {
         /*
         if(!vehiclePropertiesRepository.existsById(id)){
             throw new RessourceNotFoundException();
@@ -129,9 +127,6 @@ public class VehiclePropertiesServiceImpl implements VehiclePropertiesService {
                 .orElseThrow(RessourceNotFoundException::new);
 
         // Check si il y a bien un form existant
-        if(form== null){
-            return;
-        }
 
         //Récuperation des tables Category et Supplier existantes via l'ID du form
         Category category = categoryRepository.findById(form.getId_category())
@@ -154,6 +149,7 @@ public class VehiclePropertiesServiceImpl implements VehiclePropertiesService {
         //Vehicle_properties vehicleProperties = entityManager.find(Vehicle_properties.class, id);
         //entityManager.persist(vehicleProperties);
 
+        return mapperVehicleProperties.toVehiclePropertiesDTO(vehicle_properties);
     }
 
     @Transactional

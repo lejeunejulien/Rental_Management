@@ -14,6 +14,7 @@ public class Mapper_user {
 
     public UserDTO toRegisteredUserDTO(Registered_user entity){
         UserDTO dto = new UserDTO();
+        dto.setId(entity.getId());
         dto.setFirst_name(entity.getFirst_name());
         dto.setLast_name(entity.getLast_name());
         dto.setLogin(entity.getLogin());

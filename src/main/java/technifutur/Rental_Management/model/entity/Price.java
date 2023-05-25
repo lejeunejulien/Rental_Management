@@ -15,16 +15,16 @@ public class Price {
     @Column(name = "price_id", nullable = false)
     private Long id;
 
-    @Column(nullable = false)
+    @Column
     private Double price_day;
 
-    @Column(nullable = false)
+    @Column
     private Double price_weekend;
 
-    @Column(nullable = false)
+    @Column
     private Double price_month;
 
-    @Column(nullable = false)
+    @Column
     private Double caution;
 
     @OneToMany(mappedBy = "price")

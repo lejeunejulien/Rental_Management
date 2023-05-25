@@ -7,7 +7,7 @@ import technifutur.Rental_Management.model.form.CategoryCreateForm;
 import java.util.List;
 
 public interface CategoryService {
-    void create(CategoryCreateForm form);
+    CategoryDTO create(CategoryCreateForm form);
 
     List<CategoryDTO> getAll();
 

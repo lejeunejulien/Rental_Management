@@ -11,6 +11,7 @@ public class Mapper_vehicle_properties {
 
     public Vehicle_propertiesDTO toVehiclePropertiesDTO(Vehicle_properties entity){
         Vehicle_propertiesDTO dto = new Vehicle_propertiesDTO();
+        dto.setId(entity.getId());
         dto.setMileage(entity.getMileage());
         dto.setYear(entity.getYear());
         dto.setEngine_power(entity.getEngine_power());

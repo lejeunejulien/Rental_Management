@@ -15,6 +15,7 @@ public class Mapper_category {
     public CategoryDTO toCategoryDTO(Category entity){
 
         CategoryDTO dto = new CategoryDTO();
+        dto.setId(entity.getId());
         dto.setBrand(entity.getBrand());
         dto.setModel(entity.getModel());
         dto.setPrice(mapper_price.toPriceDTO(entity.getPrice()));

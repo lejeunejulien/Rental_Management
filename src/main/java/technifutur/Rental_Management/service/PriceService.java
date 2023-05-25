@@ -1,12 +1,22 @@
 package technifutur.Rental_Management.service;
 
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
+import technifutur.Rental_Management.model.dto.PriceDTO;
 import technifutur.Rental_Management.model.form.PriceCreateForm;
 
-public interface PriceService {
-    void create(PriceCreateForm form);
+import java.util.List;
 
-    void update(long id);
+public interface PriceService {
+    PriceDTO create(PriceCreateForm form);
+
+    @Transactional
+    PriceDTO getOne(long id);
+
+    @Transactional
+    List<PriceDTO> getAll();
+
+    PriceDTO update(PriceCreateForm form, long id);
 
     void delete(long id);
 }

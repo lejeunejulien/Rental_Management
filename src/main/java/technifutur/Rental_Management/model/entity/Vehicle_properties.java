@@ -16,24 +16,24 @@ public class Vehicle_properties {
     @Column(name = "vehicle_properties_id", nullable = false)
     private Long id;
 
-    @Column(nullable = false)
+    @Column
     private Double mileage;
 
-    @Column(nullable = false)
+    @Column
     private Double year;
 
-    @Column(nullable = false)
+    @Column
     private Double engine_power;
 
     @OneToMany(mappedBy = "vehicle_properties")
     private List<Booking> list_bookings;
 
     @ManyToOne
-    @JoinColumn(nullable = false)
+    //@JoinColumn(nullable = false)
     private Category category;
 
     @ManyToOne
-    @JoinColumn(nullable = false)
+    //@JoinColumn(nullable = false)
     private Supplier supplier;
 
     @OneToMany(mappedBy = "vehicle_properties")

@@ -25,9 +25,9 @@ public class StatusController {
 
     // Create (Admin)
     @PostMapping("/add")
-    public void create(@RequestBody @Valid Vehicle_statusForm form){
+    public Vehicle_statusDTO create(@RequestBody @Valid Vehicle_statusForm form){
 
-        statusService.create(form);
+        return statusService.create(form);
     }
 
     // Read (Admin)
@@ -47,7 +47,7 @@ public class StatusController {
 
     // Admin
     @PatchMapping("/{id:[0-9]+}/update")
-    public CategoryDTO update(@RequestBody @Valid Vehicle_statusForm form,@PathVariable long id){
+    public Vehicle_statusDTO update(@RequestBody @Valid Vehicle_statusForm form,@PathVariable long id){
 
         return statusService.update(form,id);
     }
