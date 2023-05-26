@@ -12,6 +12,7 @@ import technifutur.Rental_Management.service.VehiclePropertiesService;
 import java.util.List;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/vehicle_properties")
 public class VehiclePropertiesController {
 
