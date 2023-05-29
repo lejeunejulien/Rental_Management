@@ -29,21 +29,22 @@ public class VehiclePropertiesController {
         return ResponseEntity.ok(vehiclePropertiesService.create(form));
     }
 
-    // Read (Admin et User)
+    //getall et getone pour user [mielage, year, engine_power, category, price]
+
+    // Read (Admin)
     @GetMapping("/getall")
     public List<Vehicle_propertiesDTO> getAll(){
 
         return vehiclePropertiesService.getAll();
     }
 
-    // Read (Admin et User)
+    // Read (Admin)
     @GetMapping("/{id:[0-9]+}/getone")
     public Vehicle_propertiesDTO getOne(@PathVariable long id){
 
         return vehiclePropertiesService.getOne(id);
     }
 
-    //@RequestBody Book bookToUpdate, @PathVariable("id") int id
 
     // Admin
     @PatchMapping("/{id:[0-9]+}/update")

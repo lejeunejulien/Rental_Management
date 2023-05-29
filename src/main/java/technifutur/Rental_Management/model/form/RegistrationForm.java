@@ -13,7 +13,7 @@ public class RegistrationForm {
 
     private String first_name;
 
-    private String userName;
+    private String username;
 
     private String password;
 
