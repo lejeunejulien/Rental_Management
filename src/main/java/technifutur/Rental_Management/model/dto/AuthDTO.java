@@ -10,5 +10,6 @@ public class AuthDTO {
     private String username;
     private String token;
     private long id_user;
+    private String role;
 
 }

@@ -25,7 +25,6 @@ public class AuthController {
     //Register
     @PostMapping("/register")
     public void register(@RequestBody @Valid RegistrationForm form){
-
         authService.register(form);
     }
 
@@ -33,7 +32,6 @@ public class AuthController {
     //Sign-in
     @PostMapping("/sign_in")
     public AuthDTO login(@RequestBody @Valid LoginForm form){
-
         return authService.login(form);
     }
 

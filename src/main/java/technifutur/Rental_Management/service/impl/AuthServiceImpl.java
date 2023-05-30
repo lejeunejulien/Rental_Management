@@ -38,20 +38,25 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public AuthDTO login(LoginForm form) {
-
         /*
+
         Authentication auth = new UsernamePasswordAuthenticationToken( form.getUsername(), form.getPassword() );
         auth = authManager.authenticate(auth);
 
+        //Recherche id de l'utilisateur
         Registered_user registered_user = entityManager.find(Registered_user.class,form.getUsername());
         long id = registered_user.getId();
 
+        //Recherche du role -> Un role par utilisateur
+        string role  = registered_user.getRoles().toArray()[0];
+
+
         Category category = categoryRepository.findById(id)
                 .orElseThrow(RessourceNotFoundException::new);
-        return new AuthDTO(auth.getName(), jwtProvider.createToken(auth),id);
+        return new AuthDTO(auth.getName(), jwtProvider.createToken(auth), id, role);
 
         */
-        
+
         return null;
     }
 }
