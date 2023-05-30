@@ -9,6 +9,7 @@ import technifutur.Rental_Management.service.CategoryService;
 import java.util.List;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/category")
 public class CategoryController {
 

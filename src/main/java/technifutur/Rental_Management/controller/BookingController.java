@@ -12,6 +12,7 @@ import technifutur.Rental_Management.service.BookingService;
 import java.util.List;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/booking")
 public class BookingController {
 
@@ -24,10 +25,11 @@ public class BookingController {
 
     // Create (Client et Admin)
     //@ResponseStatus(HttpStatus.CREATED)
+    //ResponseEntity<BookingDTO>
     @PostMapping("/add")
-    public ResponseEntity<BookingDTO> create(@RequestBody @Valid BookingCreateForm form){
+    public BookingDTO create(@RequestBody @Valid BookingCreateForm form){
 
-        return ResponseEntity.ok(bookingService.create(form));
+        return bookingService.create(form);
     }
 
     // Read (Admin)

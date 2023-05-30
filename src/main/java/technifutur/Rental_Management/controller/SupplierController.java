@@ -9,6 +9,7 @@ import technifutur.Rental_Management.service.SupplierService;
 import java.util.List;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/supplier")
 public class SupplierController {
 

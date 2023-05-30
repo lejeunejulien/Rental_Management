@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import technifutur.Rental_Management.JWTHolderDTO.JWTHolderDTO;
 import technifutur.Rental_Management.model.dto.AuthDTO;
 import technifutur.Rental_Management.model.form.LoginForm;
 import technifutur.Rental_Management.model.form.RegistrationForm;
@@ -16,7 +15,7 @@ import technifutur.Rental_Management.service.AuthService;
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
-/*
+
     private final AuthService authService;
 
     public AuthController(AuthService authService){
@@ -39,6 +38,4 @@ public class AuthController {
         return authService.login(form);
     }
 
-
-     */
 }

@@ -20,7 +20,7 @@ public class BookingCreateForm {
 
     private LocalDateTime arrival_date;
 
-    private long id_registered_user; //configuration de la sécurité au préalable
+    private long id_registered_user;
 
-    private long id_vehicle_properties;  // -> voir croquis
+    private long id_vehicle_properties;
 }

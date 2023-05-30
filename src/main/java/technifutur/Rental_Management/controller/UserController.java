@@ -9,6 +9,7 @@ import technifutur.Rental_Management.service.UserService;
 import java.util.List;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/user")
 public class UserController {
 
@@ -21,9 +22,9 @@ public class UserController {
 
     // Create (Client et Admin)
     @PostMapping("/add")
-    public void create(@RequestBody @Valid RegistrationForm form){
+    public UserDTO create(@RequestBody @Valid RegistrationForm form){
 
-        userService.create(form);
+        return userService.create(form);
     }
 
     // Read (Admin)

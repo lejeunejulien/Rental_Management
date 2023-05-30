@@ -8,6 +8,7 @@ import technifutur.Rental_Management.service.PriceService;
 
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/price")
 public class PriceController {
 
