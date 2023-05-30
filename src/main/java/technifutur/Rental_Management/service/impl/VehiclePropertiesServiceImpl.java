@@ -3,20 +3,23 @@ package technifutur.Rental_Management.service.impl;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import technifutur.Rental_Management.exception.RessourceNotFoundException;
+import technifutur.Rental_Management.mapper.Mapper_status;
 import technifutur.Rental_Management.mapper.Mapper_vehicle_properties;
 import technifutur.Rental_Management.model.dto.Vehicle_propertiesDTO;
+import technifutur.Rental_Management.model.dto.Vehicle_propertiesDTO_User;
 import technifutur.Rental_Management.model.entity.Category;
 import technifutur.Rental_Management.model.entity.Supplier;
 import technifutur.Rental_Management.model.entity.Vehicle_properties;
+import technifutur.Rental_Management.model.entity.Vehicle_status;
 import technifutur.Rental_Management.model.form.VehiclePropertiesCreateForm;
 import technifutur.Rental_Management.repository.CategoryRepository;
 import technifutur.Rental_Management.repository.SupplierRepository;
 import technifutur.Rental_Management.repository.VehiclePropertiesRepository;
 import technifutur.Rental_Management.service.VehiclePropertiesService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -26,6 +29,7 @@ public class VehiclePropertiesServiceImpl implements VehiclePropertiesService {
     private final CategoryRepository categoryRepository;
     private final SupplierRepository supplierRepository;
     private final Mapper_vehicle_properties mapperVehicleProperties;
+    private final Mapper_status mapperStatus;
 
     //On "importe" l'interface "vehiclepropertiesrepository" qui extend JPa -> on peut alors interagir avec la DB
     private final VehiclePropertiesRepository vehiclePropertiesRepository;
@@ -37,12 +41,13 @@ public class VehiclePropertiesServiceImpl implements VehiclePropertiesService {
             CategoryRepository categoryRepository,
             SupplierRepository supplierRepository,
             Mapper_vehicle_properties mapperVehicleProperties,
-            VehiclePropertiesRepository vehiclePropertiesRepository
+            Mapper_status mapperStatus, VehiclePropertiesRepository vehiclePropertiesRepository
             ){
 
         this.categoryRepository = categoryRepository;
         this.supplierRepository = supplierRepository;
         this.mapperVehicleProperties = mapperVehicleProperties;
+        this.mapperStatus = mapperStatus;
         this.vehiclePropertiesRepository = vehiclePropertiesRepository;
     }
 
@@ -62,10 +67,29 @@ public class VehiclePropertiesServiceImpl implements VehiclePropertiesService {
         vehicle_properties.setCategory(category);
         vehicle_properties.setSupplier(supplier);
 
+        //On insert "List vehicle status" dans cette nouvelle entity
+        List<Vehicle_status> list_vehicle_status = new ArrayList<>();
+        for(int i=0; i<form.getList_status_vehicle().size();i++){
+            list_vehicle_status.add(mapperStatus.toStatusEntity(form.getList_status_vehicle().get(i)));
+        }
+        vehicle_properties.setList_status_vehicle(list_vehicle_status);
+
         //On sauvergarde cette entity sous forme de table dans la DB via JPa
         vehiclePropertiesRepository.save(vehicle_properties);
 
         return mapperVehicleProperties.toVehiclePropertiesDTO(vehicle_properties);
+    }
+
+    ///////////////////////////////////////////////
+
+    @Override
+    @Transactional
+    public Vehicle_propertiesDTO_User getOne_User(long id) {
+
+        Vehicle_properties vehicle_properties = vehiclePropertiesRepository.findById(id)
+                .orElseThrow(RessourceNotFoundException::new);
+
+        return mapperVehicleProperties.toVehiclePropertiesDTO_User(vehicle_properties);
     }
 
     @Override
@@ -82,6 +106,7 @@ public class VehiclePropertiesServiceImpl implements VehiclePropertiesService {
 
         Vehicle_properties vehicle_properties = vehiclePropertiesRepository.findById(id)
                 .orElseThrow(RessourceNotFoundException::new);
+
         return mapperVehicleProperties.toVehiclePropertiesDTO(vehicle_properties);
 
 
@@ -100,6 +125,7 @@ public class VehiclePropertiesServiceImpl implements VehiclePropertiesService {
         */
     }
 
+    ///////////////////////////////////////////////////////
 
     @Override
     @Transactional
@@ -137,6 +163,14 @@ public class VehiclePropertiesServiceImpl implements VehiclePropertiesService {
         //On remplace "Category" et "Supplier" à partir de l'ID du form dans la table existante
         vehicle_properties.setCategory(category);
         vehicle_properties.setSupplier(supplier);
+
+        //List vehicle status
+        List<Vehicle_status> list_vehicle_status = new ArrayList<>();
+        for(int i=0; i<form.getList_status_vehicle().size();i++){
+            list_vehicle_status.add(mapperStatus.toStatusEntity(form.getList_status_vehicle().get(i)));
+        }
+        vehicle_properties.setList_status_vehicle(list_vehicle_status);
+
 
         //On remplace "Mileage","Year","EnginePower" du form dans la table existante
         vehicle_properties.setMileage(form.getMileage());

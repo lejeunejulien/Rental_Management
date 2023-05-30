@@ -16,7 +16,6 @@ public class BookingDTO {
     private String adress;
     private LocalDateTime start_date;
     private LocalDateTime arrival_date;
-    private Registered_user registered_user; //configuration de la sécurité au préalable
-    private Vehicle_properties vehicle_properties;  // -> voir croquis
-
+    private UserDTO USerDTO;
+    private Vehicle_propertiesDTO_User vehicle_propertiesDTO_user;
 }

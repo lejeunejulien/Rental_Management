@@ -82,6 +82,7 @@ public class BookingServiceImpl implements BookingService {
     @Transactional
     @Override
     public void delete(long id) {
+
         bookingRepository.deleteById(id);
     }
 

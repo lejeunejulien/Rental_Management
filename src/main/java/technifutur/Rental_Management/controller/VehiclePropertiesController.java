@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import technifutur.Rental_Management.model.dto.BookingDTO;
 import technifutur.Rental_Management.model.dto.Vehicle_propertiesDTO;
+import technifutur.Rental_Management.model.dto.Vehicle_propertiesDTO_User;
 import technifutur.Rental_Management.model.entity.Vehicle_properties;
 import technifutur.Rental_Management.model.form.VehiclePropertiesCreateForm;
 import technifutur.Rental_Management.service.VehiclePropertiesService;
@@ -38,6 +39,8 @@ public class VehiclePropertiesController {
         return vehiclePropertiesService.getAll();
     }
 
+    ////////////////////////////////////////////
+
     // Read (Admin)
     @GetMapping("/{id:[0-9]+}/getone")
     public Vehicle_propertiesDTO getOne(@PathVariable long id){
@@ -45,6 +48,15 @@ public class VehiclePropertiesController {
         return vehiclePropertiesService.getOne(id);
     }
 
+
+    // Read (User)
+    @GetMapping("/{id:[0-9]+}/getone/user")
+    public Vehicle_propertiesDTO_User getOne_User(@PathVariable long id){
+
+        return vehiclePropertiesService.getOne_User(id);
+    }
+
+    ///////////////////////////////////////////
 
     // Admin
     @PatchMapping("/{id:[0-9]+}/update")

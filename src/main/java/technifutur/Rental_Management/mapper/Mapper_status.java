@@ -16,10 +16,7 @@ public class Mapper_status {
         dto.setId(entity.getId());
         dto.setStatus(entity.getStatus());
         dto.setStart_date(entity.getStart_date());
-
-
         dto.setEnd_date(entity.getEnd_date());
-
 
         return dto;
     }
@@ -28,11 +25,7 @@ public class Mapper_status {
         Vehicle_status entity = new Vehicle_status();
         entity.setStatus(form.getStatus());
         entity.setEnd_date(form.getEnd_date());
-
-
         entity.setStart_date(entity.getStart_date());
-
-        // registered_user et vehicle_properties -> Service
 
         return entity;
     }
